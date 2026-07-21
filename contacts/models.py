@@ -6,7 +6,7 @@ class Contact(models.Model):
     email = models.EmailField(unique=True)
     phone = models.CharField(max_length=100)
     address = models.TextField()
-    comapny = models.CharField(max_length=100)
+    company = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
