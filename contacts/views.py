@@ -14,6 +14,6 @@ class ContactViewSet(viewsets.ModelViewSet):
         filters.OrderingFilter,
     ]
 
-    filterset_fields = ["comapny"]
+    filterset_fields = ["company"]
     search_fields = ["name", "email", "phone"]
     ordering_fields = "__all__"
