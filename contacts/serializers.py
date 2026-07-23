@@ -17,3 +17,9 @@ class ContactSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("Phone number must be exactly 10 digits.")
 
         return value
+
+    def validate_email(self, value):
+        if not value.endswith("@gmail.com"):
+            raise serializers.ValidationError("Only Gmail address are allowed.")
+
+        return value
