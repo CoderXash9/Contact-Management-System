@@ -297,22 +297,6 @@ Implemented custom serializer validation.
 
 ✔ Email validation using Django EmailField
 
----
-
-# 📷 Screenshots
-
-> Add screenshots here
-
-- Django Admin
-- API Root
-- Contact List
-- Filtering
-- Searching
-- Ordering
-- Pagination
-- Validation Errors
-
----
 
 # 📈 Future Improvements
 
