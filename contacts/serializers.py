@@ -31,3 +31,9 @@ class ContactSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("Name must contain atleast 3 characters.")
 
         return value.title()
+
+    def validate_company(self, value):
+        if not value.strip():
+            raise serializers.ValidationError("Company name cannot be empty")
+
+        return value.upper()
