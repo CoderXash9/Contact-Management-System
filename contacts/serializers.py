@@ -34,6 +34,11 @@ class ContactSerializer(serializers.ModelSerializer):
 
     def validate_company(self, value):
         if not value.strip():
-            raise serializers.ValidationError("Company name cannot be empty")
+            raise serializers.ValidationError("Company name cannot be empty.")
 
         return value.upper()
+
+    def validate(self, attrs):
+        if attrs["name"].lower() == attrs["company"].lower():
+            raise serializers.ValidationError("Name and company cannot be same.")
+        return attrs
