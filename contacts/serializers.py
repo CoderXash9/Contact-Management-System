@@ -23,3 +23,11 @@ class ContactSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("Only Gmail address are allowed.")
 
         return value
+
+    def validate_name(self, value):
+        if not value.strip():
+            raise serializers.ValidationError("Name cannot be empty.")
+        if len(value.strip()) < 3:
+            raise serializers.ValidationError("Name must contain atleast 3 characters.")
+
+        return value.title()
